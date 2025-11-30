@@ -1,51 +1,34 @@
 <script setup>
 import { Head } from '@inertiajs/vue3';
 import Header from '@/Components/Layout/Header.vue';
-import HeroSection from './Components/HeroSection.vue';
-import ClientsSection from './Components/ClientsSection.vue';
-import ServicesSection from './Components/ServicesSection.vue';
-import TestimonialsSection from './Components/TestimonialsSection.vue';
-import ContactSection from './Components/ContactSection.vue';
+import ContactForm from './Components/ContactForm.vue';
+import ContactInfo from './Components/ContactInfo.vue';
 </script>
 
 <template>
-    <Head title="DXD PixelWork - Transforming Ideas into Digital Excellence" />
+    <Head title="Contact Us - DXD PixelWork" />
 
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header />
 
-        <!-- Hero Section -->
-        <HeroSection
-            title="DXD PixelWork"
-            subtitle="Transform Ideas Into Excellence"
-            description="We create stunning digital experiences that elevate your brand and drive results. From web development to digital marketing, we're your partner in digital success."
-            ctaText="Get Started"
-            ctaLink="#contact"
-        />
+        <!-- Main Contact Section -->
+        <section class="pt-32 pb-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 dark:from-gray-800 dark:via-gray-900 dark:to-gray-800 relative overflow-hidden transition-colors duration-300">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/20 to-purple-400/20 dark:from-blue-600/10 dark:to-purple-600/10 rounded-full opacity-60 blur-3xl animate-pulse-slow"></div>
+                <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-br from-purple-400/20 to-pink-400/20 dark:from-purple-600/10 dark:to-pink-600/10 rounded-full opacity-60 blur-3xl animate-pulse-slow" style="animation-delay: 1s;"></div>
+            </div>
 
-        <!-- Clients Section -->
-        <ClientsSection
-            title="Trusted by Industry Leaders"
-            subtitle="Join hundreds of companies that trust us with their digital presence"
-        />
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    <!-- Contact Info -->
+                    <ContactInfo />
 
-        <!-- Services Section -->
-        <ServicesSection
-            title="Our Services"
-            subtitle="Comprehensive digital solutions tailored to your needs"
-        />
-
-        <!-- Testimonials Section -->
-        <TestimonialsSection
-            title="What Our Clients Say"
-            subtitle="Don't just take our word for it - hear from our satisfied clients"
-        />
-
-        <!-- Contact Section -->
-        <ContactSection
-            title="Get In Touch"
-            subtitle="Ready to start your project? Contact us today and let's create something amazing together"
-        />
+                    <!-- Contact Form -->
+                    <ContactForm />
+                </div>
+            </div>
+        </section>
 
         <!-- Footer -->
         <footer class="bg-gray-900 text-white py-16 relative overflow-hidden">
@@ -90,26 +73,10 @@ import ContactSection from './Components/ContactSection.vue';
                     <div>
                         <h4 class="text-lg font-semibold mb-6 text-white">Quick Links</h4>
                         <ul class="space-y-3">
-                            <li>
-                                <a href="#" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
-                                    About Us
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#services" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
-                                    Services
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#contact" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
-                                    Contact
-                                </a>
-                            </li>
+                            <li><a href="/" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Home</a></li>
+                            <li><a href="/services" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Services</a></li>
+                            <li><a href="/about" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">About Us</a></li>
+                            <li><a href="/contact" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Contact</a></li>
                         </ul>
                     </div>
 
@@ -117,26 +84,10 @@ import ContactSection from './Components/ContactSection.vue';
                     <div>
                         <h4 class="text-lg font-semibold mb-6 text-white">Services</h4>
                         <ul class="space-y-3">
-                            <li>
-                                <a href="#" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
-                                    Web Development
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
-                                    Mobile Apps
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
-                                    UI/UX Design
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">
-                                    Digital Marketing
-                                </a>
-                            </li>
+                            <li><a href="#" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Web Development</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Mobile Apps</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">UI/UX Design</a></li>
+                            <li><a href="#" class="text-gray-300 hover:text-white hover:translate-x-1 inline-block transition-all duration-300">Digital Marketing</a></li>
                         </ul>
                     </div>
                 </div>
@@ -160,8 +111,18 @@ import ContactSection from './Components/ContactSection.vue';
 </template>
 
 <style scoped>
-/* Smooth scrolling */
-html {
-    scroll-behavior: smooth;
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 8s ease-in-out infinite;
 }
 </style>
