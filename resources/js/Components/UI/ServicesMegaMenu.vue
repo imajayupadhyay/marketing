@@ -5,28 +5,28 @@ const services = [
         description: 'Create powerful brand identities that resonate with your audience.',
         icon: 'brand',
         color: 'from-blue-500 to-cyan-500',
-        href: '/services#brand-identity'
+        href: '/services/brand-identity'
     },
     {
         title: 'UI/UX Designs',
         description: 'Design beautiful, intuitive interfaces that users love.',
         icon: 'design',
         color: 'from-purple-500 to-pink-500',
-        href: '/services#ui-ux'
+        href: '/services/ui-ux-design'
     },
     {
         title: 'Social Media Management',
         description: 'Build and engage your community with strategic management.',
         icon: 'social',
         color: 'from-pink-500 to-rose-500',
-        href: '/services#social-media'
+        href: '/services/social-media-management'
     },
     {
         title: 'Lead Generation',
         description: 'Drive qualified leads with data-driven strategies.',
         icon: 'leads',
         color: 'from-green-500 to-emerald-500',
-        href: '/services#lead-generation'
+        href: '/services/lead-generation'
     },
     {
         title: 'Website Design',

@@ -95,22 +95,22 @@ const services = [
     {
         title: 'Brand Identity & Strategy',
         icon: 'brand',
-        href: '/services#brand-identity'
+        href: '/services/brand-identity'
     },
     {
         title: 'UI/UX Designs',
         icon: 'design',
-        href: '/services#ui-ux'
+        href: '/services/ui-ux-design'
     },
     {
         title: 'Social Media Management',
         icon: 'social',
-        href: '/services#social-media'
+        href: '/services/social-media-management'
     },
     {
         title: 'Lead Generation',
         icon: 'leads',
-        href: '/services#lead-generation'
+        href: '/services/lead-generation'
     },
     {
         title: 'Website Design',
