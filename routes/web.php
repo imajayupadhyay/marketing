@@ -44,3 +44,18 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+
+// Admin Routes
+Route::prefix('admin')->group(function () {
+    // Guest routes (only accessible when not logged in)
+    Route::middleware('guest')->group(function () {
+        Route::get('/login', [App\Http\Controllers\Admin\AuthController::class, 'showLogin'])->name('admin.login');
+        Route::post('/login', [App\Http\Controllers\Admin\AuthController::class, 'login']);
+    });
+
+    // Protected routes (only accessible when logged in)
+    Route::middleware('auth')->group(function () {
+        Route::get('/dashboard', [App\Http\Controllers\Admin\AuthController::class, 'dashboard'])->name('admin.dashboard');
+        Route::post('/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('admin.logout');
+    });
+});
