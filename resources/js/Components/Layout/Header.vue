@@ -115,12 +115,12 @@ const services = [
     {
         title: 'Website Design',
         icon: 'website',
-        href: '/services#website-design'
+        href: '/services/website-design'
     },
     {
         title: 'Web Development',
         icon: 'development',
-        href: '/services#web-development'
+        href: '/services/web-development'
     }
 ];
 

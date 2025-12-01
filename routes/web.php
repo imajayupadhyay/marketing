@@ -31,6 +31,14 @@ Route::get('/services/lead-generation', function () {
     return Inertia::render('Services/LeadGeneration/Index');
 })->name('services.lead-generation');
 
+Route::get('/services/website-design', function () {
+    return Inertia::render('Services/WebsiteDesign/Index');
+})->name('services.website-design');
+
+Route::get('/services/web-development', function () {
+    return Inertia::render('Services/WebDevelopment/Index');
+})->name('services.web-development');
+
 Route::get('/contact', function () {
     return Inertia::render('Contact/Index');
 })->name('contact');
