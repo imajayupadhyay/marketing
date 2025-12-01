@@ -26,24 +26,6 @@ const navigation = [
         href: '/admin/contacts',
         icon: 'contacts',
         active: false
-    },
-    {
-        name: 'Services',
-        href: '/admin/services',
-        icon: 'services',
-        active: false
-    },
-    {
-        name: 'Pages',
-        href: '/admin/pages',
-        icon: 'pages',
-        active: false
-    },
-    {
-        name: 'Settings',
-        href: '/admin/settings',
-        icon: 'settings',
-        active: false
     }
 ];
 

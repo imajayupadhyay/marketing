@@ -57,5 +57,6 @@ Route::prefix('admin')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::get('/dashboard', [App\Http\Controllers\Admin\AuthController::class, 'dashboard'])->name('admin.dashboard');
         Route::post('/logout', [App\Http\Controllers\Admin\AuthController::class, 'logout'])->name('admin.logout');
+        Route::resource('contacts', App\Http\Controllers\Admin\ContactsController::class)->only(['index', 'destroy']);
     });
 });
