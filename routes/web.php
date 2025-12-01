@@ -42,3 +42,5 @@ Route::get('/services/web-development', function () {
 Route::get('/contact', function () {
     return Inertia::render('Contact/Index');
 })->name('contact');
+
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');

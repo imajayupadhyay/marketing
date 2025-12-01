@@ -1,7 +1,8 @@
 <script setup>
-import { ref, reactive } from 'vue';
+import { useForm } from '@inertiajs/vue3';
+import { ref, computed } from 'vue';
 
-const form = reactive({
+const form = useForm({
     name: '',
     email: '',
     phone: '',
@@ -11,24 +12,27 @@ const form = reactive({
     timeline: ''
 });
 
-const isSubmitting = ref(false);
 const isSuccess = ref(false);
 
-const submitForm = async () => {
-    isSubmitting.value = true;
+const submitForm = () => {
+    form.post(route('contact.store'), {
+        preserveScroll: true,
+        onSuccess: () => {
+            isSuccess.value = true;
+            form.reset();
 
-    // Simulate form submission
-    setTimeout(() => {
-        isSubmitting.value = false;
-        isSuccess.value = true;
-
-        // Reset form
-        setTimeout(() => {
-            isSuccess.value = false;
-            Object.keys(form).forEach(key => form[key] = '');
-        }, 3000);
-    }, 1500);
+            // Hide success message after 3 seconds
+            setTimeout(() => {
+                isSuccess.value = false;
+            }, 3000);
+        },
+        onError: (errors) => {
+            console.error('Form submission errors:', errors);
+        }
+    });
 };
+
+const isSubmitting = computed(() => form.processing);
 </script>
 
 <template>
@@ -85,10 +89,14 @@ const submitForm = async () => {
                                 type="text"
                                 id="name"
                                 required
-                                class="w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-gray-900/50 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-400"
+                                :class="[
+                                    'w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-gray-900/50 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-400',
+                                    form.errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                                ]"
                                 placeholder="John Doe"
                             />
                         </div>
+                        <div v-if="form.errors.name" class="text-red-500 text-sm mt-1">{{ form.errors.name }}</div>
                     </div>
 
                     <!-- Email Field -->
@@ -107,10 +115,14 @@ const submitForm = async () => {
                                 type="email"
                                 id="email"
                                 required
-                                class="w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-gray-900/50 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-400"
+                                :class="[
+                                    'w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-gray-900/50 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-400',
+                                    form.errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                                ]"
                                 placeholder="john@example.com"
                             />
                         </div>
+                        <div v-if="form.errors.email" class="text-red-500 text-sm mt-1">{{ form.errors.email }}</div>
                     </div>
                 </div>
 
@@ -153,10 +165,14 @@ const submitForm = async () => {
                                 type="text"
                                 id="subject"
                                 required
-                                class="w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-gray-900/50 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-400"
+                                :class="[
+                                    'w-full pl-12 pr-4 py-3.5 bg-gray-50 dark:bg-gray-900/50 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-400',
+                                    form.errors.subject ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                                ]"
                                 placeholder="Project inquiry"
                             />
                         </div>
+                        <div v-if="form.errors.subject" class="text-red-500 text-sm mt-1">{{ form.errors.subject }}</div>
                     </div>
                 </div>
 
@@ -235,9 +251,13 @@ const submitForm = async () => {
                         id="message"
                         required
                         rows="6"
-                        class="w-full px-4 py-3.5 bg-gray-50 dark:bg-gray-900/50 border border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-400 resize-none"
+                        :class="[
+                            'w-full px-4 py-3.5 bg-gray-50 dark:bg-gray-900/50 border rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-900 dark:text-white placeholder-gray-400 resize-none',
+                            form.errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+                        ]"
                         placeholder="Tell us about your project..."
                     ></textarea>
+                    <div v-if="form.errors.message" class="text-red-500 text-sm mt-1">{{ form.errors.message }}</div>
                 </div>
 
                 <!-- Submit Button -->

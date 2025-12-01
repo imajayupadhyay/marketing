@@ -1,5 +1,6 @@
 <script setup>
-import { ref } from 'vue';
+import { useForm } from '@inertiajs/vue3';
+import { ref, computed } from 'vue';
 
 const props = defineProps({
     title: {
@@ -12,41 +13,39 @@ const props = defineProps({
     }
 });
 
-const formData = ref({
+const form = useForm({
     name: '',
     email: '',
     phone: '',
     subject: '',
-    message: ''
+    message: '',
+    budget: '',
+    timeline: ''
 });
 
-const isSubmitting = ref(false);
 const submitMessage = ref('');
 
-const handleSubmit = async () => {
-    isSubmitting.value = true;
+const handleSubmit = () => {
     submitMessage.value = '';
 
-    // Simulate form submission
-    setTimeout(() => {
-        isSubmitting.value = false;
-        submitMessage.value = 'Thank you! We\'ll get back to you soon.';
+    form.post(route('contact.store'), {
+        preserveScroll: true,
+        onSuccess: () => {
+            submitMessage.value = 'Thank you! We\'ll get back to you soon.';
+            form.reset();
 
-        // Reset form
-        formData.value = {
-            name: '',
-            email: '',
-            phone: '',
-            subject: '',
-            message: ''
-        };
-
-        // Clear message after 5 seconds
-        setTimeout(() => {
-            submitMessage.value = '';
-        }, 5000);
-    }, 1500);
+            // Clear message after 5 seconds
+            setTimeout(() => {
+                submitMessage.value = '';
+            }, 5000);
+        },
+        onError: (errors) => {
+            console.error('Form submission errors:', errors);
+        }
+    });
 };
+
+const isSubmitting = computed(() => form.processing);
 </script>
 
 <template>
@@ -166,12 +165,16 @@ const handleSubmit = async () => {
                                 </label>
                                 <input
                                     id="name"
-                                    v-model="formData.name"
+                                    v-model="form.name"
                                     type="text"
                                     required
-                                    class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                    :class="[
+                                        'w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300',
+                                        form.errors.name ? 'border-red-500' : 'border-gray-200 dark:border-gray-600'
+                                    ]"
                                     placeholder="John Doe"
                                 />
+                                <div v-if="form.errors.name" class="text-red-500 text-sm mt-1">{{ form.errors.name }}</div>
                             </div>
 
                             <!-- Email -->
@@ -181,12 +184,16 @@ const handleSubmit = async () => {
                                 </label>
                                 <input
                                     id="email"
-                                    v-model="formData.email"
+                                    v-model="form.email"
                                     type="email"
                                     required
-                                    class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                    :class="[
+                                        'w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300',
+                                        form.errors.email ? 'border-red-500' : 'border-gray-200 dark:border-gray-600'
+                                    ]"
                                     placeholder="john@example.com"
                                 />
+                                <div v-if="form.errors.email" class="text-red-500 text-sm mt-1">{{ form.errors.email }}</div>
                             </div>
 
                             <!-- Phone -->
@@ -196,11 +203,15 @@ const handleSubmit = async () => {
                                 </label>
                                 <input
                                     id="phone"
-                                    v-model="formData.phone"
+                                    v-model="form.phone"
                                     type="tel"
-                                    class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                    :class="[
+                                        'w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300',
+                                        form.errors.phone ? 'border-red-500' : 'border-gray-200 dark:border-gray-600'
+                                    ]"
                                     placeholder="+1 (234) 567-890"
                                 />
+                                <div v-if="form.errors.phone" class="text-red-500 text-sm mt-1">{{ form.errors.phone }}</div>
                             </div>
 
                             <!-- Subject -->
@@ -210,12 +221,16 @@ const handleSubmit = async () => {
                                 </label>
                                 <input
                                     id="subject"
-                                    v-model="formData.subject"
+                                    v-model="form.subject"
                                     type="text"
                                     required
-                                    class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                                    :class="[
+                                        'w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300',
+                                        form.errors.subject ? 'border-red-500' : 'border-gray-200 dark:border-gray-600'
+                                    ]"
                                     placeholder="Project Inquiry"
                                 />
+                                <div v-if="form.errors.subject" class="text-red-500 text-sm mt-1">{{ form.errors.subject }}</div>
                             </div>
 
                             <!-- Message -->
@@ -225,12 +240,16 @@ const handleSubmit = async () => {
                                 </label>
                                 <textarea
                                     id="message"
-                                    v-model="formData.message"
+                                    v-model="form.message"
                                     required
                                     rows="5"
-                                    class="w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                                    :class="[
+                                        'w-full px-4 py-3 bg-gray-50 dark:bg-gray-700 border rounded-xl text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none',
+                                        form.errors.message ? 'border-red-500' : 'border-gray-200 dark:border-gray-600'
+                                    ]"
                                     placeholder="Tell us about your project..."
                                 ></textarea>
+                                <div v-if="form.errors.message" class="text-red-500 text-sm mt-1">{{ form.errors.message }}</div>
                             </div>
 
                             <!-- Submit Button -->
