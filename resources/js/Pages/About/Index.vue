@@ -10,7 +10,51 @@ import WhyChooseUs from './Components/WhyChooseUs.vue';
 </script>
 
 <template>
-    <Head title="About Us - DXD PixelWork" />
+    <Head>
+        <!-- Primary Meta Tags -->
+        <title>About DXD PixelWork - Leading Digital Agency | Our Story, Mission & Values</title>
+        <meta name="title" content="About DXD PixelWork - Leading Digital Agency | Our Story, Mission & Values" />
+        <meta name="description" content="Learn about DXD PixelWork - a leading digital agency transforming businesses through innovative solutions. Discover our story, mission, vision, core values, and expert team dedicated to your success." />
+        <meta name="keywords" content="about DXD PixelWork, digital agency, our story, our mission, company values, expert team, digital transformation, about us, agency culture, innovation" />
+        <meta name="author" content="DXD PixelWork" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://dxdpixelwork.com/about" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dxdpixelwork.com/about" />
+        <meta property="og:title" content="About DXD PixelWork - Leading Digital Agency" />
+        <meta property="og:description" content="Learn about our story, mission, and the expert team transforming businesses through innovative digital solutions." />
+        <meta property="og:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
+        <meta property="og:site_name" content="DXD PixelWork" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://dxdpixelwork.com/about" />
+        <meta name="twitter:title" content="About DXD PixelWork - Leading Digital Agency" />
+        <meta name="twitter:description" content="Discover our story, mission, values, and expert team dedicated to transforming businesses through digital innovation." />
+        <meta name="twitter:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
+
+        <!-- Organization Schema -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "DXD PixelWork",
+          "url": "https://dxdpixelwork.com",
+          "logo": "https://dxdpixelwork.com/dxd%20logo.png",
+          "description": "Leading digital agency specializing in web development, UI/UX design, brand identity, social media management, and lead generation.",
+          "sameAs": [
+            "https://facebook.com/dxdpixelwork",
+            "https://twitter.com/dxdpixelwork",
+            "https://linkedin.com/company/dxdpixelwork",
+            "https://instagram.com/dxdpixelwork"
+          ]
+        }
+        </script>
+    </Head>
 
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header />

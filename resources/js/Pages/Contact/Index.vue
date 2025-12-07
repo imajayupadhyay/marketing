@@ -6,7 +6,49 @@ import ContactInfo from './Components/ContactInfo.vue';
 </script>
 
 <template>
-    <Head title="Contact Us - DXD PixelWork" />
+    <Head>
+        <!-- Primary Meta Tags -->
+        <title>Contact Us - Get In Touch with DXD PixelWork | Start Your Project Today</title>
+        <meta name="title" content="Contact Us - Get In Touch with DXD PixelWork | Start Your Project Today" />
+        <meta name="description" content="Ready to transform your business? Contact DXD PixelWork today. Get in touch for web development, UI/UX design, branding, and digital marketing services. Free consultation available." />
+        <meta name="keywords" content="contact DXD PixelWork, get in touch, contact us, request quote, free consultation, digital agency contact, project inquiry, business inquiry" />
+        <meta name="author" content="DXD PixelWork" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://dxdpixelwork.com/contact" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dxdpixelwork.com/contact" />
+        <meta property="og:title" content="Contact Us - Get In Touch with DXD PixelWork" />
+        <meta property="og:description" content="Ready to start your project? Contact our team for a free consultation. Let's create something amazing together." />
+        <meta property="og:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
+        <meta property="og:site_name" content="DXD PixelWork" />
+
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://dxdpixelwork.com/contact" />
+        <meta name="twitter:title" content="Contact Us - Get In Touch with DXD PixelWork" />
+        <meta name="twitter:description" content="Ready to start your project? Contact our team today. Free consultation available." />
+        <meta name="twitter:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
+
+        <!-- Contact Page Schema -->
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact DXD PixelWork",
+          "description": "Contact page for DXD PixelWork digital agency",
+          "url": "https://dxdpixelwork.com/contact",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "DXD PixelWork",
+            "url": "https://dxdpixelwork.com"
+          }
+        }
+        </script>
+    </Head>
 
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
         <Header />

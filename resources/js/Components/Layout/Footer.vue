@@ -7,9 +7,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
                 <!-- Company Info -->
                 <div class="col-span-1 md:col-span-2">
-                    <h3 class="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 mb-4">
-                        DXD PixelWork
-                    </h3>
+                    <img src="/dxd logo.png" alt="DXD Logo" class="h-16 w-auto mb-4">
                     <p class="text-gray-300 mb-6 leading-relaxed">
                         Your trusted partner in digital transformation. We craft innovative solutions that help businesses thrive in the digital age.
                     </p>
