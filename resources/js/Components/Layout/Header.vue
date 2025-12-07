@@ -155,8 +155,8 @@ const getServiceDescription = (title) => {
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <a href="/" class="text-2xl font-bold text-blue-900 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200">
-                        YourLogo
+                    <a href="/" class="flex items-center hover:opacity-80 transition-opacity duration-200">
+                        <img src="/dxd logo.png" alt="DXD Logo" class="h-12 w-auto">
                     </a>
                 </div>
 
