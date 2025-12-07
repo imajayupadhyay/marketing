@@ -1,7 +1,8 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue';
+import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { usePage } from '@inertiajs/vue3';
 import SearchModal from '@/Components/UI/SearchModal.vue';
+import WhatsAppFloat from '@/Components/UI/WhatsAppFloat.vue';
 
 const page = usePage();
 const isDarkMode = ref(false);
@@ -10,6 +11,9 @@ const isMobileMenuOpen = ref(false);
 const isServicesExpanded = ref(false);
 const isMegaMenuOpen = ref(false);
 let megaMenuTimeout = null;
+
+// Scroll progress
+const scrollProgress = ref(0);
 
 const navItems = [
     { name: 'Home', href: '/' },
@@ -27,6 +31,19 @@ const isActiveLink = (href) => {
     return currentPath.value.startsWith(href);
 };
 
+// Calculate scroll progress
+const updateScrollProgress = () => {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.scrollY;
+
+    // Calculate the percentage scrolled
+    const scrollableHeight = documentHeight - windowHeight;
+    const progress = (scrollTop / scrollableHeight) * 100;
+
+    scrollProgress.value = Math.min(Math.max(progress, 0), 100);
+};
+
 // Initialize dark mode from localStorage (default: light mode)
 onMounted(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -39,6 +56,15 @@ onMounted(() => {
         document.documentElement.classList.remove('dark');
         localStorage.setItem('theme', 'light');
     }
+
+    // Add scroll event listener for progress bar
+    window.addEventListener('scroll', updateScrollProgress);
+    updateScrollProgress(); // Initialize on mount
+});
+
+// Cleanup scroll listener
+onUnmounted(() => {
+    window.removeEventListener('scroll', updateScrollProgress);
 });
 
 const toggleDarkMode = () => {
@@ -150,8 +176,20 @@ const getServiceDescription = (title) => {
 </script>
 
 <template>
-    <header class="bg-white dark:bg-gray-900 shadow-md sticky top-0 z-50 transition-colors duration-300">
-        <nav class="container mx-auto px-6 py-4">
+    <div class="sticky top-0 z-50">
+        <!-- Scroll Progress Bar (fixed to viewport top) -->
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gray-200/50 dark:bg-gray-800/50 overflow-hidden z-50">
+            <div
+                class="h-full bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-lg shadow-purple-500/50 transition-all duration-150 ease-out"
+                :style="{ width: scrollProgress + '%' }"
+            >
+                <!-- Glow effect -->
+                <div class="absolute inset-0 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 opacity-50 blur-sm"></div>
+            </div>
+        </div>
+
+        <header class="bg-white dark:bg-gray-900 shadow-md transition-colors duration-300">
+            <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <!-- Logo -->
                 <div class="flex items-center">
@@ -473,9 +511,14 @@ const getServiceDescription = (title) => {
             </div>
         </Transition>
 
-        <!-- Search Modal -->
-        <SearchModal :is-open="isSearchModalOpen" @close="closeSearchModal" />
-    </header>
+        </header>
+    </div>
+
+    <!-- Search Modal -->
+    <SearchModal :is-open="isSearchModalOpen" @close="closeSearchModal" />
+
+    <!-- WhatsApp Floating Button -->
+    <WhatsAppFloat />
 </template>
 
 <style scoped>
@@ -501,5 +544,17 @@ const getServiceDescription = (title) => {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+/* Scroll progress bar optimization */
+header {
+    position: relative;
+}
+
+/* Ensure smooth scrolling performance */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
 }
 </style>
