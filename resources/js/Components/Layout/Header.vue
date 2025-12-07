@@ -339,9 +339,9 @@ const getServiceDescription = (title) => {
                     </button>
 
                     <!-- CTA Button -->
-                    <button class="bg-blue-900 dark:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-800 dark:hover:bg-blue-500 active:bg-blue-950 dark:active:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-xl transform hover:-translate-y-0.5">
+                    <a href="/contact" class="bg-blue-900 dark:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-800 dark:hover:bg-blue-500 active:bg-blue-950 dark:active:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 inline-block">
                         Let's Talk
-                    </button>
+                    </a>
 
                     <!-- Mobile Menu Button -->
                     <button
@@ -465,9 +465,9 @@ const getServiceDescription = (title) => {
 
                     <!-- Mobile CTA Button -->
                     <div class="pt-4">
-                        <button class="w-full bg-gradient-to-r from-blue-900 to-blue-700 dark:from-blue-600 dark:to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-800 hover:to-blue-600 dark:hover:from-blue-500 dark:hover:to-blue-400 transition-all duration-200 shadow-lg hover:shadow-xl">
+                        <a href="/contact" class="w-full bg-gradient-to-r from-blue-900 to-blue-700 dark:from-blue-600 dark:to-blue-500 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-800 hover:to-blue-600 dark:hover:from-blue-500 dark:hover:to-blue-400 transition-all duration-200 shadow-lg hover:shadow-xl block text-center">
                             Let's Talk
-                        </button>
+                        </a>
                     </div>
                 </nav>
             </div>

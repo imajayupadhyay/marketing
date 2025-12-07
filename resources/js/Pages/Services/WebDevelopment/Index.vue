@@ -35,30 +35,6 @@ import WebDevCTA from './Components/WebDevCTA.vue';
         <meta name="twitter:title" content="Web Development Services - Transform Designs into Powerful Applications" />
         <meta name="twitter:description" content="Powerful applications | Scalable architecture | Modern tech stack | Agile development." />
         <meta name="twitter:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
-
-        <!-- Breadcrumb Schema -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://dxdpixelwork.com"
-          },{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://dxdpixelwork.com/services"
-          },{
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Web Development",
-            "item": "https://dxdpixelwork.com/services/web-development"
-          }]
-        }
-        </script>
     </Head>
 
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">

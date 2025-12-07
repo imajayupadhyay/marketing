@@ -32,22 +32,6 @@ import ContactInfo from './Components/ContactInfo.vue';
         <meta name="twitter:title" content="Contact Us - Get In Touch with DXD PixelWork" />
         <meta name="twitter:description" content="Ready to start your project? Contact our team today. Free consultation available." />
         <meta name="twitter:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
-
-        <!-- Contact Page Schema -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "ContactPage",
-          "name": "Contact DXD PixelWork",
-          "description": "Contact page for DXD PixelWork digital agency",
-          "url": "https://dxdpixelwork.com/contact",
-          "mainEntity": {
-            "@type": "Organization",
-            "name": "DXD PixelWork",
-            "url": "https://dxdpixelwork.com"
-          }
-        }
-        </script>
     </Head>
 
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">

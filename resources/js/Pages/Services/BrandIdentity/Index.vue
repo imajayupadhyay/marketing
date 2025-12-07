@@ -35,30 +35,6 @@ import BrandCTA from './Components/BrandCTA.vue';
         <meta name="twitter:title" content="Brand Identity & Strategy Services - Build a Powerful Brand" />
         <meta name="twitter:description" content="500+ brands created | 98% client satisfaction | 10+ years experience. Create a powerful brand identity that resonates." />
         <meta name="twitter:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
-
-        <!-- Breadcrumb Schema -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://dxdpixelwork.com"
-          },{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://dxdpixelwork.com/services"
-          },{
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Brand Identity & Strategy",
-            "item": "https://dxdpixelwork.com/services/brand-identity"
-          }]
-        }
-        </script>
     </Head>
 
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">

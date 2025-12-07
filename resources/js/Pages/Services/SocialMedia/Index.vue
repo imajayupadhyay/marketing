@@ -35,30 +35,6 @@ import SocialCTA from './Components/SocialCTA.vue';
         <meta name="twitter:title" content="Social Media Management Services - Build & Engage Your Community" />
         <meta name="twitter:description" content="Strategic social media management | Content creation | Community engagement | Analytics & insights." />
         <meta name="twitter:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
-
-        <!-- Breadcrumb Schema -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://dxdpixelwork.com"
-          },{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://dxdpixelwork.com/services"
-          },{
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Social Media Management",
-            "item": "https://dxdpixelwork.com/services/social-media-management"
-          }]
-        }
-        </script>
     </Head>
 
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">

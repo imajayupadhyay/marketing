@@ -35,30 +35,6 @@ import UIUXCTA from './Components/UIUXCTA.vue';
         <meta name="twitter:title" content="UI/UX Design Services - Create Beautiful Intuitive Interfaces" />
         <meta name="twitter:description" content="User-centered design approach | Beautiful interfaces | Seamless experiences. Design that users love." />
         <meta name="twitter:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
-
-        <!-- Breadcrumb Schema -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://dxdpixelwork.com"
-          },{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://dxdpixelwork.com/services"
-          },{
-            "@type": "ListItem",
-            "position": 3,
-            "name": "UI/UX Design",
-            "item": "https://dxdpixelwork.com/services/ui-ux-design"
-          }]
-        }
-        </script>
     </Head>
 
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">

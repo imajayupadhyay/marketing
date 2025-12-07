@@ -35,30 +35,6 @@ import WebsiteCTA from './Components/WebsiteCTA.vue';
         <meta name="twitter:title" content="Website Design Services - Build Stunning High-Performance Websites" />
         <meta name="twitter:description" content="Stunning designs | High performance | Conversion-focused | SEO-optimized | Mobile-friendly." />
         <meta name="twitter:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
-
-        <!-- Breadcrumb Schema -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://dxdpixelwork.com"
-          },{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://dxdpixelwork.com/services"
-          },{
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Website Design",
-            "item": "https://dxdpixelwork.com/services/website-design"
-          }]
-        }
-        </script>
     </Head>
 
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">

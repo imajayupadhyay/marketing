@@ -35,30 +35,6 @@ import LeadCTA from './Components/LeadCTA.vue';
         <meta name="twitter:title" content="Lead Generation Services - Drive Qualified Leads & Business Growth" />
         <meta name="twitter:description" content="Data-driven strategies | Qualified leads | Conversion optimization | ROI-focused approach." />
         <meta name="twitter:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
-
-        <!-- Breadcrumb Schema -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [{
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://dxdpixelwork.com"
-          },{
-            "@type": "ListItem",
-            "position": 2,
-            "name": "Services",
-            "item": "https://dxdpixelwork.com/services"
-          },{
-            "@type": "ListItem",
-            "position": 3,
-            "name": "Lead Generation",
-            "item": "https://dxdpixelwork.com/services/lead-generation"
-          }]
-        }
-        </script>
     </Head>
 
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">

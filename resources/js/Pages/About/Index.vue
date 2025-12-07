@@ -36,24 +36,6 @@ import WhyChooseUs from './Components/WhyChooseUs.vue';
         <meta name="twitter:title" content="About DXD PixelWork - Leading Digital Agency" />
         <meta name="twitter:description" content="Discover our story, mission, values, and expert team dedicated to transforming businesses through digital innovation." />
         <meta name="twitter:image" content="https://dxdpixelwork.com/dxd%20logo.png" />
-
-        <!-- Organization Schema -->
-        <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          "name": "DXD PixelWork",
-          "url": "https://dxdpixelwork.com",
-          "logo": "https://dxdpixelwork.com/dxd%20logo.png",
-          "description": "Leading digital agency specializing in web development, UI/UX design, brand identity, social media management, and lead generation.",
-          "sameAs": [
-            "https://facebook.com/dxdpixelwork",
-            "https://twitter.com/dxdpixelwork",
-            "https://linkedin.com/company/dxdpixelwork",
-            "https://instagram.com/dxdpixelwork"
-          ]
-        }
-        </script>
     </Head>
 
     <div class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">

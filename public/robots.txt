@@ -1,2 +1,36 @@
+# robots.txt for DXD PixelWork
+# https://dxdpixelwork.com/robots.txt
+
+# Allow all search engines to crawl the site
 User-agent: *
-Disallow:
+
+# Disallow admin area and authentication pages
+Disallow: /admin/
+Disallow: /login
+Disallow: /register
+Disallow: /password/
+
+# Disallow Laravel internal paths
+Disallow: /api/
+Disallow: /vendor/
+Disallow: /storage/
+Disallow: /.git/
+Disallow: /.env
+
+# Disallow Laravel development tools (if installed)
+Disallow: /telescope/
+Disallow: /horizon/
+Disallow: /nova/
+
+# Allow public pages to be crawled
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /services/*
+Allow: /contact
+
+# Crawl-delay (optional, removes if causes issues)
+# Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://dxdpixelwork.com/sitemap.xml
