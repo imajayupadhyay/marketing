@@ -89,7 +89,7 @@ const secondRowClients = computed(() => [...doubledClients.value].reverse());
                                     <img
                                         :src="client.image"
                                         :alt="client.name"
-                                        class="w-auto h-20 object-contain group-hover:scale-110 transition-all duration-500 filter brightness-0 dark:brightness-0 dark:invert opacity-70 group-hover:opacity-100"
+                                        class="w-auto h-20 object-contain group-hover:scale-110 transition-all duration-500"
                                     />
                                 </div>
                             </div>
@@ -120,7 +120,7 @@ const secondRowClients = computed(() => [...doubledClients.value].reverse());
                                     <img
                                         :src="client.image"
                                         :alt="client.name"
-                                        class="w-auto h-20 object-contain group-hover:scale-110 transition-all duration-500 filter brightness-0 dark:brightness-0 dark:invert opacity-70 group-hover:opacity-100"
+                                        class="w-auto h-20 object-contain group-hover:scale-110 transition-all duration-500"
                                     />
                                 </div>
                             </div>
