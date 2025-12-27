@@ -58,7 +58,7 @@ onMounted(() => {
 
                         <!-- Description -->
                         <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                            Build high-performance websites that captivate visitors and turn them into customers. Responsive, fast, and optimized for success.
+                            An eCommerce store is more than an online shop — it is a complete digital sales experience. We design and develop powerful, secure, and user-friendly eCommerce stores that help businesses sell confidently and grow online.
                         </p>
 
                         <!-- CTA Buttons -->

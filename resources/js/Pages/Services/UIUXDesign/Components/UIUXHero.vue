@@ -58,7 +58,7 @@ onMounted(() => {
 
                         <!-- Description -->
                         <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                            Create beautiful, intuitive interfaces that delight users and drive meaningful engagement through thoughtful design.
+                            Great digital experiences begin with thoughtful design. We create interfaces that are not only beautiful but also easy to use and engaging. We design experiences that users enjoy and remember.
                         </p>
 
                         <!-- CTA Buttons -->

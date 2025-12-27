@@ -62,7 +62,7 @@ onMounted(() => {
 
                     <!-- Description -->
                     <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Data-driven strategies to attract, convert, and nurture high-quality leads that fuel your business growth.
+                        Generating leads is the backbone of business growth. We provide smart, result-driven lead generation solutions that help businesses attract, engage, and convert potential customers into qualified leads.
                     </p>
 
                     <!-- CTA Buttons -->

@@ -58,7 +58,7 @@ onMounted(() => {
 
                         <!-- Description -->
                         <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                            Create a powerful brand identity that captures attention, builds trust, and drives lasting connections with your audience.
+                            Your brand identity is more than just a logo — it is how people recognize, remember, and connect with your business. At DXD Pixel Work, we help businesses build strong, unique brand identities that stand out in the digital landscape.
                         </p>
 
                         <!-- CTA Buttons -->

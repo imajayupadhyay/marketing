@@ -58,7 +58,7 @@ onMounted(() => {
 
                         <!-- Description -->
                         <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                            Transform designs into robust, scalable web applications using modern technologies that drive your business forward.
+                            Your website is the foundation of your digital presence. We create custom websites and web applications that are fast, secure, visually appealing, and built to deliver real results.
                         </p>
 
                         <!-- CTA Buttons -->

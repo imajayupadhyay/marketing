@@ -58,7 +58,7 @@ onMounted(() => {
 
                     <!-- Description -->
                     <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 leading-relaxed">
-                        Strategic social media management that builds authentic connections, grows your audience, and drives meaningful engagement.
+                        Social media is one of the most powerful ways to connect with your audience, build trust, and grow your brand. Our Social Media Management services help businesses create a strong online presence and meaningful engagement.
                     </p>
 
                     <!-- CTA Buttons -->

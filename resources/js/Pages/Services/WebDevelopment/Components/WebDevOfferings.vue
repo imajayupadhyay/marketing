@@ -1,46 +1,46 @@
 <script setup>
 const offerings = [
     {
-        title: 'Custom Development',
-        description: 'Tailored web applications built from scratch to meet your unique business requirements and goals.',
+        title: 'Custom Web Development',
+        description: 'Tailored websites and web applications built to meet your unique business requirements with modern technologies.',
         icon: 'custom',
         color: 'from-indigo-500 to-blue-500',
-        features: ['Custom solutions', 'Scalable architecture', 'Clean code', 'Best practices']
+        features: ['Custom solutions', 'Responsive design', 'SEO-friendly', 'Modern frameworks']
     },
     {
-        title: 'API Integration',
-        description: 'Seamlessly connect your application with third-party services, payment gateways, and external APIs.',
-        icon: 'api',
+        title: 'Mobile App Development',
+        description: 'Transform your ideas into smooth, high-performance mobile applications for Android and iOS platforms.',
+        icon: 'pwa',
         color: 'from-blue-500 to-cyan-500',
-        features: ['RESTful APIs', 'GraphQL', 'Webhooks', 'Authentication']
+        features: ['Native & cross-platform', 'Intuitive navigation', 'Secure functionality', 'Scalable architecture']
     },
     {
-        title: 'Database Design',
-        description: 'Robust database architecture that ensures data integrity, security, and optimal performance.',
-        icon: 'database',
+        title: 'E-Commerce Solutions',
+        description: 'Powerful online stores with secure payment gateways, inventory management, and seamless shopping experience.',
+        icon: 'api',
         color: 'from-cyan-500 to-teal-500',
-        features: ['Schema design', 'Optimization', 'Migrations', 'Backups']
+        features: ['Product management', 'Payment integration', 'Order tracking', 'Mobile-responsive']
+    },
+    {
+        title: 'Performance Optimization',
+        description: 'Fast-loading websites with clean code and optimized performance for better user experience and SEO.',
+        icon: 'database',
+        color: 'from-teal-500 to-green-500',
+        features: ['Fast loading', 'Clean code', 'Cross-device compatibility', 'Security practices']
     },
     {
         title: 'Cloud Deployment',
-        description: 'Deploy and scale your applications on leading cloud platforms with automated CI/CD pipelines.',
+        description: 'Deploy and scale your applications on leading cloud platforms with reliable hosting and monitoring.',
         icon: 'cloud',
-        color: 'from-teal-500 to-green-500',
+        color: 'from-green-500 to-indigo-500',
         features: ['AWS & Azure', 'Auto-scaling', 'Load balancing', 'Monitoring']
     },
     {
-        title: 'Progressive Web Apps',
-        description: 'Build fast, reliable web applications that work offline and provide native app-like experiences.',
-        icon: 'pwa',
-        color: 'from-green-500 to-indigo-500',
-        features: ['Offline support', 'Push notifications', 'Fast loading', 'App-like feel']
-    },
-    {
-        title: 'Maintenance & Support',
-        description: 'Ongoing maintenance, updates, and technical support to keep your application running smoothly.',
+        title: 'Support & Maintenance',
+        description: 'Continuous support and maintenance to keep your website running at its best after deployment.',
         icon: 'support',
         color: 'from-indigo-600 to-blue-600',
-        features: ['Bug fixes', 'Security patches', 'Performance tuning', '24/7 support']
+        features: ['Bug fixes', 'Updates', 'Performance tuning', 'Technical support']
     }
 ];
 </script>
@@ -65,7 +65,7 @@ const offerings = [
                     Complete Development Solutions
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    Full-stack development services to bring your vision to life
+                    Tailored web and mobile solutions built with modern technologies
                 </p>
             </div>
 

@@ -62,10 +62,10 @@ const offerings = [
                     </span>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-gray-900 via-orange-800 to-red-800 dark:from-white dark:via-orange-400 dark:to-red-400 bg-clip-text text-transparent">
-                    Complete Website Solutions
+                    Complete eCommerce Solutions
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    Everything you need to establish a powerful online presence
+                    Powerful online stores that convert visitors into customers
                 </p>
             </div>
 

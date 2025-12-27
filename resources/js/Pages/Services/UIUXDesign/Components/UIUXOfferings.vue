@@ -65,7 +65,7 @@ const offerings = [
                     Comprehensive Design Services
                 </h2>
                 <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                    From research to final designs, we cover every step of the design process
+                    User-centered designs that are beautiful, intuitive, and conversion-focused
                 </p>
             </div>
 
