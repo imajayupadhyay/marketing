@@ -13,18 +13,21 @@ const props = defineProps({
     clients: {
         type: Array,
         default: () => [
-            { name: 'TechCorp', logo: 'TC', color: 'from-blue-500 to-cyan-500' },
-            { name: 'Digital Solutions', logo: 'DS', color: 'from-purple-500 to-pink-500' },
-            { name: 'Innovation Labs', logo: 'IL', color: 'from-indigo-500 to-blue-500' },
-            { name: 'Future Systems', logo: 'FS', color: 'from-green-500 to-emerald-500' },
-            { name: 'Cloud Nine', logo: 'C9', color: 'from-orange-500 to-red-500' },
-            { name: 'Data Dynamics', logo: 'DD', color: 'from-pink-500 to-rose-500' },
-            { name: 'Smart Tech', logo: 'ST', color: 'from-teal-500 to-cyan-500' },
-            { name: 'Pixel Perfect', logo: 'PP', color: 'from-violet-500 to-purple-500' },
-            { name: 'NextGen AI', logo: 'NA', color: 'from-cyan-500 to-blue-500' },
-            { name: 'Quantum Tech', logo: 'QT', color: 'from-fuchsia-500 to-purple-500' },
-            { name: 'Alpha Systems', logo: 'AS', color: 'from-amber-500 to-orange-500' },
-            { name: 'Byte Bridge', logo: 'BB', color: 'from-emerald-500 to-teal-500' }
+            { name: 'Audio', image: '/images/clients/audio-69500965b4563.webp' },
+            { name: 'Betternity', image: '/images/clients/betternity-6950096571929.webp' },
+            { name: 'Cristiquw', image: '/images/clients/cristiquw-695009661a9b0.webp' },
+            { name: 'DevOpsS', image: '/images/clients/devopss-6950096632479.webp' },
+            { name: 'Developershala', image: '/images/clients/evelopershala-6950096684c8c.webp' },
+            { name: 'ExamBinge', image: '/images/clients/exambinge-69500966b521d.webp' },
+            { name: 'GreenSky', image: '/images/clients/greensky-69500966da2aa.webp' },
+            { name: 'HugeDomains', image: '/images/clients/hugedomains-695009670ea82.webp' },
+            { name: 'NuclearPSD', image: '/images/clients/nuclearpsd-695009673b7fe.webp' },
+            { name: 'One 98', image: '/images/clients/one-98-695009676230d.webp' },
+            { name: 'Plutus IAS', image: '/images/clients/plutus-ias-695009678e46f.webp' },
+            { name: 'RPM', image: '/images/clients/rpm-69500967b9ef5.webp' },
+            { name: 'ToolsMine', image: '/images/clients/toolsmine-69500967dbfe3.webp' },
+            { name: 'DXD', image: '/images/clients/dxd-logo-6950096668e47.webp' },
+            { name: 'Client Partner', image: '/images/clients/client-logo-69500965d5d86.webp' }
         ]
     }
 });
@@ -79,18 +82,15 @@ const secondRowClients = computed(() => [...doubledClients.value].reverse());
                         >
                             <div class="relative w-48 h-32 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50">
                                 <!-- Hover Glow Effect -->
-                                <div :class="['absolute -inset-0.5 bg-gradient-to-br rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500 -z-10', client.color]"></div>
+                                <div class="absolute -inset-0.5 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-sm transition-all duration-500 -z-10"></div>
 
-                                <div class="flex flex-col items-center justify-center h-full space-y-3">
-                                    <!-- Logo -->
-                                    <div :class="['w-16 h-16 bg-gradient-to-br rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-110 group-hover:rotate-6 transition-all duration-500', client.color]">
-                                        {{ client.logo }}
-                                    </div>
-
-                                    <!-- Client Name -->
-                                    <p class="text-xs font-semibold text-gray-700 dark:text-gray-200 text-center">
-                                        {{ client.name }}
-                                    </p>
+                                <div class="flex flex-col items-center justify-center h-full">
+                                    <!-- Logo Image -->
+                                    <img
+                                        :src="client.image"
+                                        :alt="client.name"
+                                        class="w-auto h-20 object-contain group-hover:scale-110 transition-all duration-500 filter brightness-0 dark:brightness-0 dark:invert opacity-70 group-hover:opacity-100"
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -113,18 +113,15 @@ const secondRowClients = computed(() => [...doubledClients.value].reverse());
                         >
                             <div class="relative w-48 h-32 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50">
                                 <!-- Hover Glow Effect -->
-                                <div :class="['absolute -inset-0.5 bg-gradient-to-br rounded-2xl opacity-0 group-hover:opacity-100 blur-sm transition-all duration-500 -z-10', client.color]"></div>
+                                <div class="absolute -inset-0.5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-sm transition-all duration-500 -z-10"></div>
 
-                                <div class="flex flex-col items-center justify-center h-full space-y-3">
-                                    <!-- Logo -->
-                                    <div :class="['w-16 h-16 bg-gradient-to-br rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-md group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500', client.color]">
-                                        {{ client.logo }}
-                                    </div>
-
-                                    <!-- Client Name -->
-                                    <p class="text-xs font-semibold text-gray-700 dark:text-gray-200 text-center">
-                                        {{ client.name }}
-                                    </p>
+                                <div class="flex flex-col items-center justify-center h-full">
+                                    <!-- Logo Image -->
+                                    <img
+                                        :src="client.image"
+                                        :alt="client.name"
+                                        class="w-auto h-20 object-contain group-hover:scale-110 transition-all duration-500 filter brightness-0 dark:brightness-0 dark:invert opacity-70 group-hover:opacity-100"
+                                    />
                                 </div>
                             </div>
                         </div>

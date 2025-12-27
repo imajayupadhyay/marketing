@@ -194,7 +194,11 @@ const getServiceDescription = (title) => {
                 <!-- Logo -->
                 <div class="flex items-center">
                     <a href="/" class="flex items-center hover:opacity-80 transition-opacity duration-200">
-                        <img src="/dxd logo.png" alt="DXD Logo" class="h-12 w-auto">
+                        <img
+                            :src="isDarkMode ? '/dxd white logo.png' : '/dxd logo.png'"
+                            alt="DXD Logo"
+                            class="h-12 w-auto transition-opacity duration-300"
+                        >
                     </a>
                 </div>
 
@@ -376,8 +380,8 @@ const getServiceDescription = (title) => {
                         </svg>
                     </button>
 
-                    <!-- CTA Button -->
-                    <a href="/contact" class="bg-blue-900 dark:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-800 dark:hover:bg-blue-500 active:bg-blue-950 dark:active:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 inline-block">
+                    <!-- CTA Button - Hidden on mobile, shown on desktop -->
+                    <a href="/contact" class="max-md:hidden bg-blue-900 dark:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-800 dark:hover:bg-blue-500 active:bg-blue-950 dark:active:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 inline-block">
                         Let's Talk
                     </a>
 
