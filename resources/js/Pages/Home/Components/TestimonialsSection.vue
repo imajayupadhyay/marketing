@@ -14,52 +14,124 @@ const props = defineProps({
         type: Array,
         default: () => [
             {
-                name: 'Sarah Johnson',
-                position: 'CEO, TechStart Inc.',
-                image: 'SJ',
+                name: '99Notes',
+                position: 'UPSC Learning Platform',
+                image: '99',
                 rating: 5,
-                text: 'DXD PixelWork transformed our digital presence completely. Their team is professional, creative, and delivered beyond our expectations.',
+                text: 'Working with the team was a smooth and productive experience. The content was well-researched, structured, and aligned perfectly with UPSC aspirants\' needs. Timely delivery, clarity of concepts, and attention to detail made the collaboration valuable and impactful for our learning platform.',
                 color: 'from-blue-500 to-cyan-500'
             },
             {
-                name: 'Michael Chen',
-                position: 'Founder, Digital Solutions',
-                image: 'MC',
+                name: 'Plutus IAS',
+                position: 'IAS Coaching Institute',
+                image: 'PI',
                 rating: 5,
-                text: 'Outstanding work! They understood our vision and brought it to life with exceptional attention to detail. Highly recommend!',
+                text: 'The content delivered was insightful, exam-oriented, and easy to understand. Concepts were presented with clarity and relevance to current UPSC requirements. The professionalism, consistency, and subject understanding shown throughout the project made this collaboration highly effective.',
                 color: 'from-purple-500 to-pink-500'
             },
             {
-                name: 'Emily Rodriguez',
-                position: 'Marketing Director, InnovateCo',
-                image: 'ER',
+                name: 'Chahal Academy',
+                position: 'Competitive Exam Coaching',
+                image: 'CA',
                 rating: 5,
-                text: 'The best digital agency we\'ve worked with. Professional, responsive, and results-driven. Our ROI has increased significantly.',
+                text: 'We appreciated the structured approach and strong command over academic content. The material was engaging, accurate, and tailored for competitive exam aspirants. Communication was smooth, deadlines were respected, and the final output met our quality expectations.',
                 color: 'from-pink-500 to-rose-500'
             },
             {
-                name: 'David Thompson',
-                position: 'CTO, CloudTech',
-                image: 'DT',
+                name: 'Cine98 Edusolutions',
+                position: 'Educational Solutions Provider',
+                image: 'C98',
                 rating: 5,
-                text: 'Incredible team with cutting-edge expertise. They delivered our project on time and exceeded all quality expectations.',
+                text: 'The work reflected creativity combined with clarity. Content was student-centric, easy to grasp, and aligned with our educational goals. The ability to simplify complex topics while maintaining accuracy made the contribution truly valuable.',
                 color: 'from-orange-500 to-red-500'
             },
             {
-                name: 'Lisa Anderson',
-                position: 'Product Manager, StartupXYZ',
-                image: 'LA',
+                name: 'NEEE – Nuclear Edge',
+                position: 'Nuclear Engineering Platform',
+                image: 'NE',
                 rating: 5,
-                text: 'Working with DXD PixelWork was a game-changer for our business. Their innovative solutions helped us scale rapidly.',
+                text: 'The content demonstrated strong research depth and technical understanding. Information was presented in a clear, organized manner without compromising accuracy. The professionalism and subject awareness brought credibility and value to our platform.',
                 color: 'from-indigo-500 to-blue-500'
             },
             {
-                name: 'James Wilson',
-                position: 'Director, GlobalCorp',
-                image: 'JW',
+                name: 'Greensky Logistics',
+                position: 'Logistics Company',
+                image: 'GL',
                 rating: 5,
-                text: 'Exceptional service from start to finish. They truly care about their clients\' success and it shows in their work.',
+                text: 'We received clear, concise, and well-structured content that aligned with our brand voice. The ability to understand our business needs and translate them into impactful written communication made the collaboration smooth and effective.',
                 color: 'from-green-500 to-emerald-500'
+            },
+            {
+                name: 'Toolsmine',
+                position: 'Tools & Equipment',
+                image: 'TM',
+                rating: 5,
+                text: 'The content was informative, precise, and aligned with industry standards. Attention to detail and clarity helped communicate our offerings effectively. We appreciated the timely delivery and professional approach throughout the project.',
+                color: 'from-teal-500 to-cyan-500'
+            },
+            {
+                name: 'RPM',
+                position: 'Business Solutions',
+                image: 'RPM',
+                rating: 5,
+                text: 'Working together was a seamless experience. The content delivered was polished, relevant, and well-suited to our brand objectives. Strong understanding of requirements and consistent quality made this collaboration successful.',
+                color: 'from-violet-500 to-purple-500'
+            },
+            {
+                name: 'HugeDomains',
+                position: 'Domain Services',
+                image: 'HD',
+                rating: 5,
+                text: 'The content was crisp, professional, and optimized for clarity and user engagement. It effectively communicated our message while maintaining a clean and professional tone. Overall, a reliable and efficient collaboration.',
+                color: 'from-sky-500 to-blue-500'
+            },
+            {
+                name: 'ExamOringe',
+                position: 'Educational Platform',
+                image: 'EO',
+                rating: 5,
+                text: 'The educational content was well-researched, exam-focused, and easy for students to follow. Concepts were explained clearly with relevance to competitive exams. The commitment to quality and deadlines made the work highly dependable.',
+                color: 'from-amber-500 to-orange-500'
+            },
+            {
+                name: 'DevOps Jungle',
+                position: 'DevOps Learning Platform',
+                image: 'DJ',
+                rating: 5,
+                text: 'We appreciated the technical accuracy and clarity in the content delivered. Complex DevOps concepts were simplified without losing depth. The work reflected strong subject understanding and a learner-focused approach.',
+                color: 'from-lime-500 to-green-500'
+            },
+            {
+                name: 'Audio Gold',
+                position: 'Audio Equipment & Services',
+                image: 'AG',
+                rating: 5,
+                text: 'The content matched our brand personality and communicated our services effectively. It was engaging, concise, and well-crafted. The collaboration was professional, timely, and result-oriented.',
+                color: 'from-yellow-500 to-amber-500'
+            },
+            {
+                name: 'Crystique',
+                position: 'Luxury Brand',
+                image: 'CQ',
+                rating: 5,
+                text: 'The work showcased creativity blended with clarity and elegance. Content aligned perfectly with our brand aesthetics and messaging. Attention to tone, detail, and presentation made the final output impressive and effective.',
+                color: 'from-fuchsia-500 to-pink-500'
+            },
+            {
+                name: 'Developershala',
+                position: 'Developer Training Platform',
+                image: 'DS',
+                rating: 5,
+                text: 'The content was practical, learner-centric, and aligned with industry needs. Technical topics were explained clearly, making them accessible to beginners. We valued the consistency, clarity, and professionalism throughout the collaboration.',
+                color: 'from-rose-500 to-red-500'
+            },
+            {
+                name: 'BetterNity',
+                position: 'Social Impact Organization',
+                image: 'BN',
+                rating: 5,
+                text: 'The content reflected strong values, clarity, and purpose. It communicated our mission effectively while remaining simple and engaging. The thoughtful approach and quality execution made this collaboration meaningful and impactful.',
+                color: 'from-emerald-500 to-teal-500'
             }
         ]
     }

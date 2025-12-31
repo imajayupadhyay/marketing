@@ -26,18 +26,14 @@ const props = defineProps({
             { name: 'Plutus IAS', image: '/images/clients/plutus-ias-695009678e46f.webp' },
             { name: 'RPM', image: '/images/clients/rpm-69500967b9ef5.webp' },
             { name: 'ToolsMine', image: '/images/clients/toolsmine-69500967dbfe3.webp' },
-            { name: 'DXD', image: '/images/clients/dxd-logo-6950096668e47.webp' },
-            { name: 'Client Partner', image: '/images/clients/client-logo-69500965d5d86.webp' }
+            { name: 'DXD', image: '/images/clients/dxd-logo-6950096668e47.webp' }
         ]
     }
 });
 
-// Double the clients array for seamless infinite scroll
-const doubledClients = computed(() => [...props.clients, ...props.clients]);
-
-// Split into two rows for different directions
-const firstRowClients = computed(() => doubledClients.value);
-const secondRowClients = computed(() => [...doubledClients.value].reverse());
+// Create unique sets for each row to avoid visible duplicates
+const firstRowClients = computed(() => props.clients);
+const secondRowClients = computed(() => [...props.clients].reverse());
 </script>
 
 <template>
@@ -75,10 +71,32 @@ const secondRowClients = computed(() => [...doubledClients.value].reverse());
 
                 <div class="carousel-container overflow-hidden">
                     <div class="carousel-track animate-scroll-left hover:pause-animation">
+                        <!-- First set -->
                         <div
                             v-for="(client, index) in firstRowClients"
-                            :key="'row1-' + index"
+                            :key="'row1-set1-' + index"
                             class="carousel-item group"
+                        >
+                            <div class="relative w-48 h-32 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50">
+                                <!-- Hover Glow Effect -->
+                                <div class="absolute -inset-0.5 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-sm transition-all duration-500 -z-10"></div>
+
+                                <div class="flex flex-col items-center justify-center h-full">
+                                    <!-- Logo Image -->
+                                    <img
+                                        :src="client.image"
+                                        :alt="client.name"
+                                        class="w-auto h-20 object-contain group-hover:scale-110 transition-all duration-500"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Second set for infinite scroll -->
+                        <div
+                            v-for="(client, index) in firstRowClients"
+                            :key="'row1-set2-' + index"
+                            class="carousel-item group"
+                            aria-hidden="true"
                         >
                             <div class="relative w-48 h-32 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50">
                                 <!-- Hover Glow Effect -->
@@ -106,10 +124,32 @@ const secondRowClients = computed(() => [...doubledClients.value].reverse());
 
                 <div class="carousel-container overflow-hidden">
                     <div class="carousel-track animate-scroll-right hover:pause-animation">
+                        <!-- First set -->
                         <div
                             v-for="(client, index) in secondRowClients"
-                            :key="'row2-' + index"
+                            :key="'row2-set1-' + index"
                             class="carousel-item group"
+                        >
+                            <div class="relative w-48 h-32 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50">
+                                <!-- Hover Glow Effect -->
+                                <div class="absolute -inset-0.5 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl opacity-0 group-hover:opacity-20 blur-sm transition-all duration-500 -z-10"></div>
+
+                                <div class="flex flex-col items-center justify-center h-full">
+                                    <!-- Logo Image -->
+                                    <img
+                                        :src="client.image"
+                                        :alt="client.name"
+                                        class="w-auto h-20 object-contain group-hover:scale-110 transition-all duration-500"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Second set for infinite scroll -->
+                        <div
+                            v-for="(client, index) in secondRowClients"
+                            :key="'row2-set2-' + index"
+                            class="carousel-item group"
+                            aria-hidden="true"
                         >
                             <div class="relative w-48 h-32 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50">
                                 <!-- Hover Glow Effect -->

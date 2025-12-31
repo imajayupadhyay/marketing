@@ -2,10 +2,8 @@
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { usePage } from '@inertiajs/vue3';
 import SearchModal from '@/Components/UI/SearchModal.vue';
-import WhatsAppFloat from '@/Components/UI/WhatsAppFloat.vue';
 
 const page = usePage();
-const isDarkMode = ref(false);
 const isSearchModalOpen = ref(false);
 const isMobileMenuOpen = ref(false);
 const isServicesExpanded = ref(false);
@@ -44,18 +42,11 @@ const updateScrollProgress = () => {
     scrollProgress.value = Math.min(Math.max(progress, 0), 100);
 };
 
-// Initialize dark mode from localStorage (default: light mode)
+// Always use light mode
 onMounted(() => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        isDarkMode.value = true;
-        document.documentElement.classList.add('dark');
-    } else {
-        // Default to light mode
-        isDarkMode.value = false;
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-    }
+    // Force light mode
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('theme', 'light');
 
     // Add scroll event listener for progress bar
     window.addEventListener('scroll', updateScrollProgress);
@@ -66,18 +57,6 @@ onMounted(() => {
 onUnmounted(() => {
     window.removeEventListener('scroll', updateScrollProgress);
 });
-
-const toggleDarkMode = () => {
-    isDarkMode.value = !isDarkMode.value;
-
-    if (isDarkMode.value) {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
-    }
-};
 
 const openSearchModal = () => {
     isSearchModalOpen.value = true;
@@ -195,7 +174,7 @@ const getServiceDescription = (title) => {
                 <div class="flex items-center">
                     <a href="/" class="flex items-center hover:opacity-80 transition-opacity duration-200">
                         <img
-                            :src="isDarkMode ? '/dxd white logo.png' : '/dxd logo.png'"
+                            src="/dxd logo.png"
                             alt="DXD Logo"
                             class="h-12 w-auto transition-opacity duration-300"
                         >
@@ -356,7 +335,7 @@ const getServiceDescription = (title) => {
                     <!-- Search Icon -->
                     <button
                         @click="openSearchModal"
-                        class="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-200 transform hover:scale-110"
+                        class="p-2 text-gray-700 hover:text-blue-900 hover:bg-blue-50 rounded-lg transition-all duration-200 transform hover:scale-110"
                         aria-label="Search"
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -364,31 +343,15 @@ const getServiceDescription = (title) => {
                         </svg>
                     </button>
 
-                    <!-- Dark/Light Mode Toggle -->
-                    <button
-                        @click="toggleDarkMode"
-                        class="p-2 text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-200 transform hover:scale-110 hover:rotate-12"
-                        aria-label="Toggle dark mode"
-                    >
-                        <!-- Sun Icon (When in Dark Mode - shows sun to switch to light) -->
-                        <svg v-if="isDarkMode" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                        </svg>
-                        <!-- Moon Icon (When in Light Mode - shows moon to switch to dark) -->
-                        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                        </svg>
-                    </button>
-
                     <!-- CTA Button - Hidden on mobile, shown on desktop -->
-                    <a href="/contact" class="max-md:hidden bg-blue-900 dark:bg-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-800 dark:hover:bg-blue-500 active:bg-blue-950 dark:active:bg-blue-700 transition-all duration-200 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 inline-block">
+                    <a href="/contact" class="max-md:hidden bg-blue-900 text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-800 active:bg-blue-950 transition-all duration-200 shadow-md hover:shadow-xl transform hover:-translate-y-0.5 inline-block">
                         Let's Talk
                     </a>
 
                     <!-- Mobile Menu Button -->
                     <button
                         @click="toggleMobileMenu"
-                        class="md:hidden p-2 text-gray-700 dark:text-gray-300 hover:text-blue-900 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-200"
+                        class="md:hidden p-2 text-gray-700 hover:text-blue-900 hover:bg-blue-50 rounded-lg transition-all duration-200"
                         aria-label="Toggle mobile menu"
                     >
                         <!-- Hamburger Icon -->
@@ -520,9 +483,6 @@ const getServiceDescription = (title) => {
 
     <!-- Search Modal -->
     <SearchModal :is-open="isSearchModalOpen" @close="closeSearchModal" />
-
-    <!-- WhatsApp Floating Button -->
-    <WhatsAppFloat />
 </template>
 
 <style scoped>
