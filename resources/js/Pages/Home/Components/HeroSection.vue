@@ -90,7 +90,7 @@ onMounted(() => {
                             href="#services"
                             class="px-8 py-4 border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white rounded-xl font-semibold hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-gray-900 transform hover:-translate-y-1 transition-all duration-300"
                         >
-                            Explore Services
+                            Explore Services Ajay
                         </a>
                     </div>
 
